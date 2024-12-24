@@ -22,7 +22,7 @@ public class LoginPage {
 
     @Step("Login with credentials ")
     public LoginPage login(String user, String password) {
-        log.info("Method: login");
+        log.info("Method: login '{}','{}'",user,password);
         $x(USER_INPUT).setValue(user);
         $x(PASSWORD_INPUT).setValue(password);
         $x(BUTTON_SIGN_IN).click();
