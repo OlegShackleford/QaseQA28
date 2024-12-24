@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +13,7 @@ public class ProjectsPage {
     private final String BUTTON_ACTION_MENU = "button[aria-label='Open action menu']";
     private final String BUTTON_REMOVE = "[data-testid=remove]";
     private final String BUTTON_DELETE = "//span[text() = 'Delete project']/ancestor::button[@type = 'button']";
-    private final String ALL_PROJECT = "//tbody";
+    private final String ALL_PROJECT = "//table//tbody";
     private final String INPUT_PROJECT_NAME = "//input[@id = 'project-name']";
     private final String BUTTON_CREATE_PROJECT = "//span[text() = 'Create project']/ancestor::button[@type = 'submit']";
     private final String LINK_OF_PROJECT = "https://app.qase.io/project/%s";
@@ -53,12 +52,6 @@ public class ProjectsPage {
         return this;
     }
 
-    @Step("Elements is exist - '{projectName}'")
-    public Boolean elementsIsExist(String projectName) {
-        log.info("Method: elementsIsExist '{}'",projectName);
-        return $$x(ALL_PROJECT).find(Condition.text(projectName)).exists();
-    }
-
     @Step("Create project - '{projectName}'")
     public ProjectsPage createProject(String projectName) {
         log.info("Method: createdProject '{}'",projectName);
@@ -68,9 +61,9 @@ public class ProjectsPage {
         return this;
     }
 
-    @Step("Get project name '{projectName}'")
-    public String getProjectName(String projectName) {
-        log.info("Method: getProjectName '{}'",projectName);
-        return $(byText(projectName)).getText();
+    @Step("Is project name exist '{projectName}'")
+    public Boolean isProjectExist(String projectName,String searchedElement) {
+        log.info("Method: isProjectExist '{}','{}'",projectName,searchedElement);
+        return projectName.equals($(byText(searchedElement)).getText());
     }
 }
