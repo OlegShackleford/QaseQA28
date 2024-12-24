@@ -1,10 +1,11 @@
 package tests;
 
 import io.qameta.allure.Description;
+import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
+
 import static org.testng.Assert.assertEquals;
-import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 public class CreateNewCaseTest extends BaseTest {
