@@ -34,4 +34,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn clean test -DMY_SECRET_USER=$USERNAME -DMY_SECRET_PASSWORD=$PASSWORD
+        run: mvn clean test -Duser=$USERNAME -Dpassword=$PASSWORD
