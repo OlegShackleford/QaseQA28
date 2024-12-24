@@ -12,7 +12,7 @@ public class CreateNewCaseTest extends BaseTest {
 
     @Test(testName = "Create new testcase")
     @Description("Create new testcase with name - QS." +
-            " Before run this test make sure that the project this name exist")
+            " Before run this test make sure that the project this name exist ")
     public void checkCreateTestCase() {
         log.info("Method: checkCreateTestCase");
         loginPage
