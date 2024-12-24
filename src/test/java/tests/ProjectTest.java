@@ -1,10 +1,11 @@
 package tests;
 
 import io.qameta.allure.Description;
+import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
+
 import static org.testng.Assert.assertTrue;
-import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 public class ProjectTest extends BaseTest {
@@ -21,8 +22,8 @@ public class ProjectTest extends BaseTest {
                 .waitTillOpened()
                 .createProject("QA")
                 .openProjectsPage();
-        assertTrue(projectsPage.isProjectExist("QA","QA")
-                ,"Project not found on the page");
+        assertTrue(projectsPage.isProjectExist("QA", "QA")
+                , "Project not found on the page");
         projectsPage.removeProject("QA");
     }
 }

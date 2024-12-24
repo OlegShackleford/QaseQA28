@@ -2,9 +2,10 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 public class ProjectsPage {
@@ -27,7 +28,7 @@ public class ProjectsPage {
 
     @Step("Open created project - '{name}'")
     public ProjectsPage openCreatedProject(String name) {
-        log.info("Method: openCreatedProject '{}'",name);
+        log.info("Method: openCreatedProject '{}'", name);
         String project = String.format(LINK_OF_PROJECT, name.toUpperCase());
         open(project);
         return this;
@@ -42,7 +43,7 @@ public class ProjectsPage {
 
     @Step("Remove project - '{projectName}'")
     public ProjectsPage removeProject(String projectName) {
-        log.info("Method: removeProject '{}'",projectName);
+        log.info("Method: removeProject '{}'", projectName);
         $(byText(projectName))
                 .ancestor("tr")
                 .find(BUTTON_ACTION_MENU)
@@ -54,7 +55,7 @@ public class ProjectsPage {
 
     @Step("Create project - '{projectName}'")
     public ProjectsPage createProject(String projectName) {
-        log.info("Method: createdProject '{}'",projectName);
+        log.info("Method: createdProject '{}'", projectName);
         $x(BUTTON_CREATE_NEW_PROJECT).click();
         $x(INPUT_PROJECT_NAME).setValue(projectName);
         $x(BUTTON_CREATE_PROJECT).click();
@@ -62,8 +63,8 @@ public class ProjectsPage {
     }
 
     @Step("Is project name exist '{projectName}'")
-    public Boolean isProjectExist(String projectName,String searchedElement) {
-        log.info("Method: isProjectExist '{}','{}'",projectName,searchedElement);
+    public Boolean isProjectExist(String projectName, String searchedElement) {
+        log.info("Method: isProjectExist '{}','{}'", projectName, searchedElement);
         return projectName.equals($(byText(searchedElement)).getText());
     }
 }
