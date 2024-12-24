@@ -29,7 +29,7 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        options.addArguments("headless");
         Configuration.timeout = 90000;
         Configuration.browserCapabilities = options; //Кидаем опции какие нам нужны
 //        Configuration.browser = "chrome"; //указываем какой браузер we want
