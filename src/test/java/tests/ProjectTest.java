@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 public class ProjectTest extends BaseTest {
 
     @Test(testName = "Create new project")
-    @Description("Check create new project with name QA")
+    @Description("Check create new project with name QA ")
     public void checkCreateNewProject() {
         log.info("Method: checkCreateNewProject");
         loginPage

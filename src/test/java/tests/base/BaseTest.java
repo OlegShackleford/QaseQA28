@@ -53,6 +53,5 @@ public class BaseTest {
         if (getWebDriver() != null) {
             getWebDriver().quit();
         }
-
     }
 }
