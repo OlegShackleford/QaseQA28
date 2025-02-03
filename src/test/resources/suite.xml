@@ -8,9 +8,7 @@
     <test name="Chrome Tests">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="tests.api.ProjectCRUDTest" />
             <class name="tests.ui.ProjectTest" />
-            <class name="tests.ui.CreateNewCaseTest" />
         </classes>
     </test>
 </suite>

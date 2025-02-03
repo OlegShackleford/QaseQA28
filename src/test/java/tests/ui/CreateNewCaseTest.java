@@ -28,7 +28,8 @@ public class CreateNewCaseTest extends BaseTest {
         ProjectApi.createProjectWithApi(projectRq);
         projectsPage
                 .openProjectsPage()
-                .waitTillOpened().openCreatedProject("QS");
+                .waitTillOpened()
+                .openCreatedProject("QS");
 
         repositoryProjectPage.waitTillClickable()
                 .clickPlusCase()
