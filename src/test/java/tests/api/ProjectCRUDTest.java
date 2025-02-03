@@ -21,7 +21,7 @@ public class ProjectCRUDTest {
 
     @Test(testName = "Check created project with API", description = "Create project, get project, delete project")
     @Description("Test with three API steps: create project,get project,delete project")
-    public void checkCreateProject() {
+    public void checkCreateProjectWithApi() {
         CreateProjectRq projectRq = CreateProjectRq
                 .builder()
                 .title(title)
