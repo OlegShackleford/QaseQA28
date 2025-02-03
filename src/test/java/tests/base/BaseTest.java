@@ -23,7 +23,6 @@ public class BaseTest {
     protected ProjectsPage projectsPage;
     protected RepositoryProjectPage repositoryProjectPage;
     protected CreateTestCasePage createTestCasePage;
-    protected ProjectApi projectApi;
 
     protected String user = System.getProperty("user", PropertyReader.getProperty("user"));
     protected String password = System.getProperty("password", PropertyReader.getProperty("password"));
@@ -51,12 +50,10 @@ public class BaseTest {
 //                break;
         }
 
-
         loginPage = new LoginPage();
         projectsPage = new ProjectsPage();
         repositoryProjectPage = new RepositoryProjectPage();
         createTestCasePage = new CreateTestCasePage();
-        projectApi = new ProjectApi();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
