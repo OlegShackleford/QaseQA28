@@ -34,7 +34,7 @@ public class BaseTest {
         switch (browser.toLowerCase()) {
             case "chrome":
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
+                options.addArguments("--headless","--window-size=1920,1080");
                 Configuration.timeout = 90000;
                 Configuration.browser = Browsers.CHROME;
                 Configuration.headless = true;
@@ -43,7 +43,7 @@ public class BaseTest {
 
             case "firefox":
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
+                firefoxOptions.addArguments("--headless","--window-size=1920,1080");
                 Configuration.timeout = 90000;
                 Configuration.browser = Browsers.FIREFOX;
                 Configuration.headless = true;

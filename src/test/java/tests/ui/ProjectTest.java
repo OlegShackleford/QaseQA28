@@ -21,6 +21,7 @@ public class ProjectTest extends BaseTest {
                 .login(user, password);
         projectsPage
                 .openProjectsPage()
+                .waitTillOpened()
                 .createProject("QA")
                 .openProjectsPage();
         assertTrue(projectsPage.isProjectExist("QA", "QA")

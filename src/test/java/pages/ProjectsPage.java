@@ -37,7 +37,7 @@ public class ProjectsPage {
     @Step("Wait till opened - ProjectsPage")
     public ProjectsPage waitTillOpened() {
         log.info("Method: waitTillOpened");
-        $x(BUTTON_CREATE_NEW_PROJECT).shouldBe(Condition.clickable);
+        $x(BUTTON_CREATE_NEW_PROJECT).shouldBe(Condition.visible).shouldBe(Condition.clickable);
         return this;
     }
 
