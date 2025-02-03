@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 @Log4j2
 public class ProjectsPage {
 
-    private final String BUTTON_CREATE_NEW_PROJECT = "//span[text() = 'Create new project']";
+    private final String BUTTON_CREATE_NEW_PROJECT = "//span[text() = 'Create new project']//ancestor::button";
     private final String BUTTON_ACTION_MENU = "button[aria-label='Open action menu']";
     private final String BUTTON_REMOVE = "[data-testid=remove]";
     private final String BUTTON_DELETE = "//span[text() = 'Delete project']/ancestor::button[@type = 'button']";
@@ -37,7 +37,7 @@ public class ProjectsPage {
     @Step("Wait till opened - ProjectsPage")
     public ProjectsPage waitTillOpened() {
         log.info("Method: waitTillOpened");
-        $x(BUTTON_CREATE_NEW_PROJECT).shouldBe(Condition.visible);
+        $x(BUTTON_CREATE_NEW_PROJECT).shouldBe(Condition.visible).shouldBe(Condition.clickable);
         return this;
     }
 

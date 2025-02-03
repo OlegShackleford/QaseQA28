@@ -12,13 +12,13 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        log.info("======================================== STARTING TEST '{}' ========================================",
+        log.info("======================================= STARTING TEST '{}' ========================================",
                 iTestResult.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        log.info("======================================== FINISHED TEST '{}' Duration: '{}'s ========================================",
+        log.info("======================================= FINISHED TEST '{}' Duration: '{}'s ========================================",
                 iTestResult.getName(),
                 getExecutionTime(iTestResult));
     }
