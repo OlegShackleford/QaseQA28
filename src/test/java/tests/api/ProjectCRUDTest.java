@@ -1,16 +1,13 @@
 package tests.api;
 
-import adapters.ProjectApi;
 import dto.CreateProjectRq;
 import dto.CreateProjectRs;
 import dto.ProjectRs;
 import io.qameta.allure.Description;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import static adapters.ProjectApi.*;
-import static org.testng.Assert.assertTrue;
 
 public class ProjectCRUDTest {
 
@@ -22,7 +19,7 @@ public class ProjectCRUDTest {
 
     SoftAssert softAssert = new SoftAssert();
 
-    @Test(testName = "Check created project with API",description = "Create project, get project, delete project")
+    @Test(testName = "Check created project with API", description = "Create project, get project, delete project")
     @Description("Test with three API steps: create project,get project,delete project")
     public void checkCreateProject() {
         CreateProjectRq projectRq = CreateProjectRq
@@ -35,14 +32,14 @@ public class ProjectCRUDTest {
                 .build();
 
         CreateProjectRs createResponse = createProjectWithApi(projectRq);
-        softAssert.assertTrue(createResponse.getStatus(),"Status not true");
-        softAssert.assertEquals(createResponse.getResult().getCode(),"PROJECTS","Incorrect code of project");
+        softAssert.assertTrue(createResponse.getStatus(), "Status not true");
+        softAssert.assertEquals(createResponse.getResult().getCode(), "PROJECTS", "Incorrect code of project");
 
         ProjectRs getResponse = getProjectWithApi(code);
-        softAssert.assertEquals(getResponse.getResult().getTitle(),"Project API","Incorrect title");
+        softAssert.assertEquals(getResponse.getResult().getTitle(), "Project API", "Incorrect title");
 
         CreateProjectRs deleteResponse = deleteProjectWithApi(code);
-        softAssert.assertTrue(deleteResponse.getStatus(),"Status not true");
+        softAssert.assertTrue(deleteResponse.getStatus(), "Status not true");
         softAssert.assertAll();
     }
 

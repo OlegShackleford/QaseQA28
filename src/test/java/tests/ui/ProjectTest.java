@@ -1,6 +1,7 @@
 package tests.ui;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Flaky;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
@@ -12,6 +13,7 @@ public class ProjectTest extends BaseTest {
 
     @Test(testName = "Create new project")
     @Description("Check create new project with name QA ")
+    @Flaky
     public void checkCreateNewProject() {
         log.info("Method: checkCreateNewProject");
         loginPage

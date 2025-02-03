@@ -30,7 +30,7 @@ public class ProjectApi {
 
     @Step("Create project with API {projectRq}")
     public static CreateProjectRs createProjectWithApi(CreateProjectRq projectRq) {
-        log.info("Method: createProjectWithApi ,{},{}",projectRq.getTitle(),projectRq.getCode());
+        log.info("Method: createProjectWithApi ,{},{}", projectRq.getTitle(), projectRq.getCode());
         return given().
                 spec(spec).
                 body(gson.toJson(projectRq)).
@@ -47,7 +47,7 @@ public class ProjectApi {
 
     @Step("Get project with API {code}")
     public static ProjectRs getProjectWithApi(String code) {
-        log.info("Method: getProjectWithApi ,{}",code);
+        log.info("Method: getProjectWithApi ,{}", code);
         return given().
                 spec(spec).
                 when().
@@ -62,7 +62,7 @@ public class ProjectApi {
 
     @Step("Delete project with API {code}")
     public static CreateProjectRs deleteProjectWithApi(String code) {
-        log.info("Method: deleteProjectWithApi , {}",code);
+        log.info("Method: deleteProjectWithApi , {}", code);
         return given().
                 spec(spec).
                 when().
