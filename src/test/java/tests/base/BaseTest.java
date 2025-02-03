@@ -41,14 +41,14 @@ public class BaseTest {
                 Configuration.browserCapabilities = options;
                 break;
 
-            case "firefox":
-                FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.addArguments("--headless","--window-size=1920,1080");
-                Configuration.timeout = 90000;
-                Configuration.browser = Browsers.FIREFOX;
-                Configuration.headless = true;
-                Configuration.browserCapabilities = firefoxOptions;
-                break;
+//            case "firefox":
+//                FirefoxOptions firefoxOptions = new FirefoxOptions();
+//                firefoxOptions.addArguments("--headless","--window-size=1920,1080");
+//                Configuration.timeout = 90000;
+//                Configuration.browser = Browsers.FIREFOX;
+//                Configuration.headless = true;
+//                Configuration.browserCapabilities = firefoxOptions;
+//                break;
         }
 
 
