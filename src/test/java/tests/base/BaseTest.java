@@ -3,6 +3,7 @@ package tests.base;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import io.restassured.RestAssured;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -37,6 +38,7 @@ public class BaseTest {
 //        Configuration.clickViaJs = true; //вместо JavaScriptExecuter; Всегда будет кликать через негож
 //        Configuration.baseUrl = "https://app.qase.io/";
 //        getWebDriver().navigate();
+
         loginPage = new LoginPage();
         projectsPage = new ProjectsPage();
         repositoryProjectPage = new RepositoryProjectPage();

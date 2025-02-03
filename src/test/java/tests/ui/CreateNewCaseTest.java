@@ -1,5 +1,7 @@
-package tests;
+package tests.ui;
 
+import adapters.ProjectApi;
+import dto.CreateProjectRq;
 import io.qameta.allure.Description;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
@@ -14,10 +16,16 @@ public class CreateNewCaseTest extends BaseTest {
     @Description("Create new testcase with name - QS." +
             " Before run this test make sure that the project this name exist ")
     public void checkCreateTestCase() {
-        log.info("Method: checkCreateTestCase");
         loginPage
                 .openLoginPage()
                 .login(user, password);
+        CreateProjectRq projectRq =
+                CreateProjectRq
+                        .builder()
+                        .title("QS")
+                        .code("QS").
+                        build();
+        ProjectApi.createProjectWithApi(projectRq);
         projectsPage
                 .openProjectsPage()
                 .waitTillOpened().openCreatedProject("QS");
@@ -32,5 +40,6 @@ public class CreateNewCaseTest extends BaseTest {
                 .clickButtonSafe();
         String testCaseTitle = repositoryProjectPage.getNameOfTestCase("Test manage system");
         assertEquals(testCaseTitle, "Test manage system", "Incorrect test case title");
+        ProjectApi.deleteProjectWithApi("QS");
     }
 }
